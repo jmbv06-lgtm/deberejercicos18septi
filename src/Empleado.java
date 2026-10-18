@@ -1,50 +1,41 @@
-public class Factura {
-    private String numeroPieza;
-    private String descripcionPieza;
-    private int cantidad;
-    private double precioPorArticulo;
 
-    public Factura(String numeroPieza, String descripcionPieza,
-                   int cantidad, double precioPorArticulo) {
-        this.numeroPieza = numeroPieza;
-        this.descripcionPieza = descripcionPieza;
-        establecerCantidad(cantidad);
-        establecerPrecioPorArticulo(precioPorArticulo);
+public class Empleado {
+    private String nombre;
+    private String apellido;
+    private double salarioMensual;
+
+    public Empleado(String nombre, String apellido, double salarioMensual) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+
+        if (salarioMensual > 0) {
+            this.salarioMensual = salarioMensual;
+        }
     }
 
-    public void establecerNumeroPieza(String numero) {
-        numeroPieza = numero;
+    public void establecerNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String obtenerNumeroPieza() {
-        return numeroPieza;
+    public String obtenerNombre() {
+        return nombre;
     }
 
-    public void establecerDescripcionPieza(String descripcion) {
-        descripcionPieza = descripcion;
+    public void establecerApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String obtenerDescripcionPieza() {
-        return descripcionPieza;
+    public String obtenerApellido() {
+        return apellido;
     }
 
-    public void establecerCantidad(int cantidad) {
-        this.cantidad = cantidad > 0 ? cantidad : 0;
+    public void establecerSalarioMensual(double salarioMensual) {
+        if (salarioMensual > 0) {
+            this.salarioMensual = salarioMensual;
+        }
     }
 
-    public int obtenerCantidad() {
-        return cantidad;
-    }
-
-    public void establecerPrecioPorArticulo(double precio) {
-        precioPorArticulo = precio > 0 ? precio : 0.0;
-    }
-
-    public double obtenerPrecioPorArticulo() {
-        return precioPorArticulo;
-    }
-
-    public double obtenerMontoFactura() {
-        return cantidad * precioPorArticulo;
+    public double obtenerSalarioMensual() {
+        return salarioMensual;
     }
 }
